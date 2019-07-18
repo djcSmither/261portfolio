@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+class MultiplicatorUnitFailure extends Error {}
+
+function primitiveMultiply(a, b) {
+  if (Math.random() < 0.2) {
+    return a * b;
+  } else {
+    throw new MultiplicatorUnitFailure("Klunk");
+  }
+}
+
+function reliableMultiply(a, b) {
+  // Your code here.
+  let valid = false;
+  while(valid == false){
+    try{
+        let result = primitiveMultiply(a, b);
+        console.log(result);
+        valid = true;
+
+    }catch(error){
+        console.log("lets go around again");
+    }
+  }
+}
+
+console.log(reliableMultiply(8, 8));
+// → 64
+
+
+    </script>
+    
+</body>
+</html>

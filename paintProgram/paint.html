@@ -7,21 +7,39 @@
     <title>Document</title>
     <meta name= "viewport" content ="width = device - width">
     <link href="/paint.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <script src="/paint.js"></script>
+      <!-- <script src="/new-canvas.js"></script> -->
 </head>
 <body>
     <div class = 'wrapper'>
 
-        <canvas id="myCanvas" width = 600 height="600"></canvas>
+        <canvas id="myCanvas" width = 800 height="300"></canvas>        
+        <div id="img-data-div">
+            <a href="#" id="img-file" download="image.png">download image</a>
+        </div>    
+        <div> 
+        <canvas id="new-canvas" width = 800 height="300"></canvas>
+    </div>
 <br>
         <div class= "toolbar">
-        <button id = 'imgFile'>Save</button>
+        <!-- <button id = 'imgFile'>Save</button>
         <button id = 'brush'>Brush</button>
-        <button id = 'rectangle'>Brush</button>
+        <button id = 'rectangle'>rectangle</button>
         <button id = 'line'>Line</button>
-        <button id = 'eraser'>Erase</button>
+        <button id = 'eraser'>Erase</button> -->
+        
+        
+        <!-- NEW TOOL ICONS -->
+        <button ><i id = "brush_icon" class="material-icons" style="font-size:45px;" >brush</i></button>
+        <button><i id = "box_icon" class="material-icons" style="font-size:45px;" >crop_square</i></button>
+        <button><i id = "clear_icon" class="material-icons" style="font-size:45px;" >clear</i></button>
+        <button onclick="cloneCanvas(document.getElementById('myCanvas'))"><i id = "animate_icon" class="material-icons" style="font-size:45px;" >directions_run</i></button>
+        <button onclick = "SaveImage()"><i id = "save_icon" class="material-icons" style="font-size:45px;" >save</i></button>
+        <!-- <i id = class="material-icons" style="font-size:36px;" >brush</i> -->
+        </div>
     </div>
-    </div>
+
 
 
 </body>
